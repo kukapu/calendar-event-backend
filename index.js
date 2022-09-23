@@ -26,9 +26,16 @@ app.use( express.json() )
 // Rutas
 // TO DO: auth // crear, login, renew
 app.use('/api/auth', require('./routes/auth'))
+// TO DO: CRUD: Eventos
 app.use('/api/events', require('./routes/events'))
 
-// TO DO: CRUD: Eventos
+
+app.get('*', ( req, res ) => {
+    res.sendFile( __dirname + '/public/index.html')
+})
+
+
+
 
 
 // Escuchar peticiones
